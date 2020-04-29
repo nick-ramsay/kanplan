@@ -1,18 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kanban Template</title>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
-    <link rel="stylesheet" type="text/css" href="../assets/style.css">
+    <link rel="stylesheet" type="text/css" href="../assets/style/style.css">
 </head>
+
 <body>
     <div class="kanban-container">
         <div class="swimlane">
-            <p><strong>New Swimlane</strong></p>
+            <div class="swimlane-heading clearfix">
+                <p class="swimlane-title"><strong>New Swimlane</strong></p>
+            </div>
+            <div class="swimlane-card ui-widget-content">
+                <span>Test Card 1!</span>
+            </div>
+            <div class="swimlane-add-card">
+                <span>+ Add Card<span>
+            </div>
         </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js" integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.0.slim.min.js"
+        integrity="sha256-MlusDLJIP1GRgLrOflUQtshyP0TwT/RHXsI1wWGnQhs=" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js" integrity="sha256-VazP97ZCwtekAsvgPBSUwPFKdrwD3unUfSGVYrahUqU=" crossorigin="anonymous"></script>
+    <script src="../assets/js/kanban.js"></script>
 </body>
+
 </html>
