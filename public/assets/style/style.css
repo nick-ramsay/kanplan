@@ -11,6 +11,16 @@ body {
     padding: 5px 10px 5px 10px;
     position: absolute;
     display: block;
+    float: left;
+}
+
+.add-swimlane-column {
+    width: 225px;
+    background-color: lightgray;
+    color: darkslategray;
+    border-radius: 4px;
+    padding: 5px 10px 5px 10px;
+    float: right;
 }
 
 .swimlane-heading {
@@ -46,7 +56,7 @@ body {
     cursor: grabbing;
 }
 
-.swimlane-add-card {
+.button-full-width {
     color: darkslategray;
     border-radius: 4px;
     font-size: 15px;
@@ -54,7 +64,7 @@ body {
     padding: 5px;
 }
 
-.swimlane-add-card:hover {
+.button-full-width:hover {
     background-color: #bababa;
     cursor: pointer;
 }
