@@ -1,5 +1,5 @@
 body {
-    background-color: royalblue;
+    background-color: #582C83;
     font-family: Arial, Helvetica, sans-serif;
 }
 
@@ -41,13 +41,6 @@ body {
     position: relative;
     float: left;
 }
-    
-.swimlane-settings {
-    position: relative;
-    float: right;
-    border: 1px darkslategray solid;
-    border-radius: 4px;
-}
 
 .swimlane-card {
     background-color: whitesmoke;
@@ -64,6 +57,30 @@ body {
 
 .swimlane-card:active {
     cursor: grabbing;
+}
+
+#sortable { 
+    list-style-type: none; 
+    margin: 0; 
+    padding: 0; 
+    width: 60%; 
+}
+
+#sortable li { 
+    margin: 0 5px 5px 5px; 
+    padding: 5px; 
+    font-size: 1.2em; 
+    height: 1.5em; 
+}
+
+html>body #sortable li { 
+    height: 1.5em; 
+    line-height: 1.2em; 
+}
+
+.ui-state-highlight { 
+    height: 1.5em; 
+    line-height: 1.2em; 
 }
 
 .button-full-width {
