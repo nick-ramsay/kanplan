@@ -38,8 +38,17 @@ body {
 }
 
 .swimlane-title {
+    font-weight: bold;
     position: relative;
     float: left;
+    outline: none;
+}
+
+.swimlane-title:focus {
+    background: whitesmoke;
+    border: 1px dashed darkslategray;
+    border-radius: 4px;
+    padding: 2px;
 }
 
 .swimlane-card {
@@ -89,6 +98,8 @@ html>body #sortable li {
     font-size: 15px;
     margin: 15px 0 5px 0;
     padding: 5px;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .button-full-width:hover {
