@@ -42,6 +42,7 @@ body {
     position: relative;
     float: left;
     outline: none;
+    min-width: 95%;
 }
 
 .swimlane-title:focus {
