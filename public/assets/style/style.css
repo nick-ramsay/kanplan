@@ -67,6 +67,7 @@ body {
 
 .swimlane-card:active {
     cursor: grabbing;
+    transform: rotate(1deg);
 }
 
 #sortable { 
@@ -89,8 +90,12 @@ html>body #sortable li {
 }
 
 .ui-state-highlight { 
-    height: 1.5em; 
-    line-height: 1.2em; 
+    height: 1.3em; 
+    line-height: 1.2em;
+    margin-top: 5px;
+    background-color: #bababa;
+    border-radius: 4px;
+    width: 99%;
 }
 
 .button-full-width {
