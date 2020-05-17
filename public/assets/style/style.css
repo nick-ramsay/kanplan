@@ -3,7 +3,7 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-.kanban-container {
+#kanban-container {
     display: flex;
     overflow: no-wrap;
 }

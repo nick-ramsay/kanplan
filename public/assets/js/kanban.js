@@ -17,7 +17,7 @@ var board_content = {
 $(document).ready(
     function () {
         console.log(board_content);
-        //initializeBoard();
+        initializeBoard();
 
         $(".sortable").sortable({
             placeholder: "ui-state-highlight",
@@ -43,11 +43,16 @@ function createNewCard() {
 }
 
 function initializeBoard() {
-    for (i=0; i < board_content.swimlanes.length;i++) {
+    for (i = 0; i < board_content.swimlanes.length; i++) {
         console.log(i);
-        var swimlaneDiv = '<div class="swimlane">';
-        var swimlaneTitle = 'div class="swimlane-heading clearfix"><p class="swimlane-title" contenteditable="true">New Swimlane</p></div>';
-        $(swimlaneDiv).append(swimlaneTitle);
-        $("#swimlane-container").append(swimlaneDiv);
+        console.log(board_content.swimlanes[i].title);
+        var newSwimlaneDiv = '<div class="swimlane"></div>';
+        //var newSwimlaneTitle = '<div class="swimlane-heading clearfix"><p class="swimlane-title" contenteditable="true">'+ board_content.swimlanes[i].title + '</p></div>';
+
+        //$(newSwimlaneDiv).append(newSwimlaneTitle);
+        $("#kanban-container").append(newSwimlaneDiv);
     }
+
+    var addColumnDiv = '<div class="add-swimlane-column"><div id="add-new-swimlane" class="button-full-width"><span>+ Add Column<span></div></div>';
+    $("#kanban-container").append(addColumnDiv);
 }
