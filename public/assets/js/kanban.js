@@ -50,7 +50,7 @@ function initializeBoard() {
         //var newSwimlaneTitle = '<div class="swimlane-heading clearfix"><p class="swimlane-title" contenteditable="true">'+ board_content.swimlanes[i].title + '</p></div>';
 
         //$(newSwimlaneDiv).append(newSwimlaneTitle);
-        $("#kanban-container").append(newSwimlaneDiv);
+        //$("#kanban-container").append(newSwimlaneDiv);
     }
 
     var addColumnDiv = '<div class="add-swimlane-column"><div id="add-new-swimlane" class="button-full-width"><span>+ Add Column<span></div></div>';
