@@ -46,11 +46,20 @@ function initializeBoard() {
     for (i = 0; i < board_content.swimlanes.length; i++) {
         console.log(i);
         console.log(board_content.swimlanes[i].title);
-        var newSwimlaneDiv = '<div class="swimlane"></div>';
-        //var newSwimlaneTitle = '<div class="swimlane-heading clearfix"><p class="swimlane-title" contenteditable="true">'+ board_content.swimlanes[i].title + '</p></div>';
+        var newSwimlaneDiv = $('<div class="swimlane"></div>');
+        var newSwimlaneTitle = $('<div class="swimlane-heading clearfix"><p class="swimlane-title" contenteditable="true">'+ board_content.swimlanes[i].title + '</p></div>');
+        var newSortableCardDiv = $('<div class="sortable"></div>');
+        
+        $(newSwimlaneDiv).append(newSwimlaneTitle);
+        
+        for (j = 0; j < board_content.swimlanes[i].cards.length;j++) {
+            console.log(board_content.swimlanes[i].cards[j].title);
+            var newCardDiv = $('<div class="swimlane-card ui-state-default"><span>' + board_content.swimlanes[i].cards[j].title +'</span></div>');
+            $(newSortableCardDiv).append(newCardDiv);
+        }
 
-        //$(newSwimlaneDiv).append(newSwimlaneTitle);
-        //$("#kanban-container").append(newSwimlaneDiv);
+        $(newSwimlaneDiv).append(newSortableCardDiv);
+        $("#kanban-container").append(newSwimlaneDiv);
     }
 
     var addColumnDiv = '<div class="add-swimlane-column"><div id="add-new-swimlane" class="button-full-width"><span>+ Add Column<span></div></div>';
