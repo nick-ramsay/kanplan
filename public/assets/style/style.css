@@ -39,8 +39,19 @@ body {
     width: 100%;
 }
 
+.swimlane-drag-icon {
+    height: 15px;
+    width: 15px;
+    float: right;
+}
+
+.swimlane-drag-icon:hover {
+    cursor: pointer;
+}
+
 .swimlane-title {
     font-weight: bold;
+    margin-top: 0;
     position: relative;
     float: left;
     outline: none;
