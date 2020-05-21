@@ -21,6 +21,7 @@ $(document).ready(
 
         $(".sortable").sortable({
             placeholder: "ui-state-highlight",
+            connectWith: ".sortable",
             stop: function (event, ui) {
                 alert("New Position: " + ui.item.index());
             }
@@ -28,7 +29,6 @@ $(document).ready(
 
         $(".sortable").disableSelection();
 
-        console.log(Date.now());
     }
 );
 
