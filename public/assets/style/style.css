@@ -51,7 +51,6 @@ body {
 
 .swimlane-title {
     font-weight: bold;
-    margin-top: 0;
     position: relative;
     float: left;
     outline: none;
@@ -83,7 +82,7 @@ body {
     transform: rotate(1deg);
 }
 
-.sortable {
+.sortable-cards {
     min-height: 10px;
 }
 

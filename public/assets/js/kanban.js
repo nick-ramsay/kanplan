@@ -19,15 +19,26 @@ $(document).ready(
         console.log(board_content);
         initializeBoard();
 
-        $(".sortable").sortable({
+        $(".sortable-cards").sortable({
             placeholder: "ui-state-highlight",
-            connectWith: ".sortable",
+            connectWith: ".sortable-cards",
             stop: function (event, ui) {
                 alert("New Position: " + ui.item.index());
             }
         });
 
-        $(".sortable").disableSelection();
+        $(".sortable-cards").disableSelection();
+
+        $("#kanban-container").sortable({
+            connectWith: "#kanban-container",
+            delay: 900, //delay for 900 milliseconds until draggable
+            cancel: ".swimlane-title",
+            stop: function (event, ui) {
+                alert("New Position: " + ui.item.index());
+            }
+        });
+
+        $("#kanban-container").disableSelection();
 
     }
 );
@@ -47,12 +58,10 @@ function initializeBoard() {
         console.log(i);
         console.log(board_content.swimlanes[i].title);
         var newSwimlaneDiv = $('<div class="swimlane"></div>');
-        var newDragSwimlaneIcon = $('<img class="swimlane-drag-icon" src="../assets/images/material_io_drag_icon.png">');
         var newSwimlaneTitle = $('<div class="swimlane-heading clearfix"><p class="swimlane-title" contenteditable="true">' + board_content.swimlanes[i].title + '</p></div>');
-        var newSortableCardDiv = $('<div class="sortable"></div>');
+        var newSortableCardDiv = $('<div class="sortable-cards"></div>');
         var newAddCardDiv = $('<div id="add-new-card" class="button-full-width" onclick="createNewCard()"><span>+ Add Card<span></div>');
 
-        $(newSwimlaneDiv).append(newDragSwimlaneIcon);
         $(newSwimlaneDiv).append(newSwimlaneTitle);
 
         for (j = 0; j < board_content.swimlanes[i].cards.length; j++) {
