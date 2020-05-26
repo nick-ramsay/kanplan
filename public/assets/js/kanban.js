@@ -4,11 +4,20 @@ var board_content = {
     swimlanes: [
         {
             id: "3584903-8785934-4534",
-            title: "Dynamic Board Column!",
+            title: "Dynamic Board Column 1!",
             cards: [
-                { title: "Dynamic Card 1" },
-                { title: "Dynamic Card 2" },
-                { title: "Dynamic Card 3" }
+                { title: "Dynamic Card 1.1" },
+                { title: "Dynamic Card 1.2" },
+                { title: "Dynamic Card 1.3" }
+            ]
+        },
+        {
+            id: "3584903-8785934-4535",
+            title: "Dynamic Board Column 2!",
+            cards: [
+                { title: "Dynamic Card 2.1" },
+                { title: "Dynamic Card 2.2" },
+                { title: "Dynamic Card 2.3" }
             ]
         }
     ]
@@ -24,13 +33,18 @@ $(document).ready(
             connectWith: ".sortable-cards",
             stop: function (event, ui) {
                 alert("New Position: " + ui.item.index());
+            },
+            update: function (event,ui) {
+                $('.swimlane-card').each(function(i) {
+                    console.log(i);
+                })
             }
         });
 
         $(".sortable-cards").disableSelection();
 
-        $("#kanban-container").sortable({
-            connectWith: "#kanban-container",
+        $("#swimlane-container").sortable({
+            connectWith: "#swimlane-container",
             delay: 900, //delay for 900 milliseconds until draggable
             cancel: ".swimlane-title",
             stop: function (event, ui) {
@@ -38,7 +52,7 @@ $(document).ready(
             }
         });
 
-        $("#kanban-container").disableSelection();
+        $("#swimlane-container").disableSelection();
 
     }
 );
@@ -65,13 +79,13 @@ function initializeBoard() {
         $(newSwimlaneDiv).append(newSwimlaneTitle);
 
         for (j = 0; j < board_content.swimlanes[i].cards.length; j++) {
-            var newCardDiv = $('<div class="swimlane-card ui-state-default"><span>' + board_content.swimlanes[i].cards[j].title + '</span></div>');
+            var newCardDiv = $('<div class="swimlane-card ui-state-default" data-card-order=' + j + '><span>' + board_content.swimlanes[i].cards[j].title + '</span></div>');
             $(newSortableCardDiv).append(newCardDiv);
         }
 
         $(newSwimlaneDiv).append(newSortableCardDiv);
         $(newSwimlaneDiv).append(newAddCardDiv);
-        $("#kanban-container").append(newSwimlaneDiv);
+        $("#swimlane-container").append(newSwimlaneDiv);
     }
 
     var addColumnDiv = '<div class="add-swimlane-column"><div id="add-new-swimlane" class="button-full-width"><span>+ Add Column<span></div></div>';
